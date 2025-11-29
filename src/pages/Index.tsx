@@ -7,6 +7,7 @@ import CategoryCard from "@/components/CategoryCard";
 import { Button } from "@/components/ui/button";
 import { Code, Palette, PenTool, Video, TrendingUp, Megaphone, Camera, Music } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 import serviceWebImg from "@/assets/service-web.jpg";
 import serviceDesignImg from "@/assets/service-design.jpg";
 import serviceVideoImg from "@/assets/service-video.jpg";
@@ -103,7 +104,9 @@ const Index = () => {
                 <h2 className="text-3xl font-display font-bold mb-2">Most Popular Services</h2>
                 <p className="text-muted-foreground">Hand-picked services by our team</p>
               </div>
-              <Button variant="outline" className="hidden md:inline-flex">View All</Button>
+              <Link to="/browse">
+                <Button variant="outline" className="hidden md:inline-flex">View All</Button>
+              </Link>
             </div>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -177,12 +180,16 @@ const Index = () => {
               Join Million+ for free and start your freelancing journey today
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-orange-glow">
-                Join as a Freelancer
-              </Button>
-              <Button size="lg" variant="outline" className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                I'm Looking to Hire
-              </Button>
+              <Link to="/for-freelancers">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-orange-glow">
+                  Join as a Freelancer
+                </Button>
+              </Link>
+              <Link to="/for-clients">
+                <Button size="lg" variant="outline" className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                  I'm Looking to Hire
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
