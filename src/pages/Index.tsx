@@ -22,8 +22,8 @@ const Index = () => {
       image: serviceWebImg,
       title: "I will create a professional responsive website with React",
       seller: { name: "Alex Chen", avatar: avatar1, rating: 4.9, reviews: 287 },
-      price: "0.05",
-      crypto: "ETH",
+      price: "50",
+      crypto: "M+",
       deliveryTime: "3 days",
       featured: true,
     },
@@ -32,8 +32,8 @@ const Index = () => {
       image: serviceDesignImg,
       title: "I will design a modern logo and brand identity",
       seller: { name: "Sarah Kim", avatar: avatar2, rating: 5.0, reviews: 432 },
-      price: "0.02",
-      crypto: "ETH",
+      price: "20",
+      crypto: "M+",
       deliveryTime: "2 days",
       featured: true,
     },
@@ -43,7 +43,7 @@ const Index = () => {
       title: "I will edit your video professionally with color grading",
       seller: { name: "Marcus Silva", avatar: avatar3, rating: 4.8, reviews: 198 },
       price: "150",
-      crypto: "USDT",
+      crypto: "M+",
       deliveryTime: "5 days",
     },
     {
@@ -52,7 +52,7 @@ const Index = () => {
       title: "I will develop a custom WordPress website",
       seller: { name: "Alex Chen", avatar: avatar1, rating: 4.9, reviews: 287 },
       price: "200",
-      crypto: "USDT",
+      crypto: "M+",
       deliveryTime: "7 days",
     },
   ];
@@ -73,13 +73,13 @@ const Index = () => {
       name: "Jennifer Torres",
       role: "Startup Founder",
       avatar: avatar2,
-      text: "Million+ changed how we hire talent. Instant crypto payments mean our remote team gets paid immediately, no matter where they are.",
+      text: "Million+ changed how we hire talent. Instant M+ payments mean our remote team gets paid immediately, no matter where they are.",
     },
     {
       name: "David Park",
       role: "Freelance Designer",
       avatar: avatar3,
-      text: "As a freelancer, getting paid in crypto is a game-changer. No more waiting days for bank transfers or losing money on fees.",
+      text: "As a freelancer, getting paid in M+ on XRPL is a game-changer. No more waiting days for bank transfers or losing money on fees.",
     },
     {
       name: "Emma Rodriguez",
@@ -151,7 +151,7 @@ const Index = () => {
               {testimonials.map((testimonial, index) => (
                 <Card key={index} className="hover:shadow-card transition-smooth">
                   <CardContent className="p-6">
-                    <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
+            <p className="text-muted-foreground mb-6 italic">"{testimonial.text}"</p>
                     <div className="flex items-center gap-3">
                       <img 
                         src={testimonial.avatar} 
@@ -177,7 +177,7 @@ const Index = () => {
               Ready to Get Started?
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              Join Million+ for free and start your freelancing journey today
+              Join Million+ for free and connect your XRPL wallet to start transacting with M+
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Link to="/for-freelancers">

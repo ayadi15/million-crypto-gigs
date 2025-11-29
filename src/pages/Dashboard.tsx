@@ -17,9 +17,9 @@ const Dashboard = () => {
     },
     { 
       title: "Total Earnings", 
-      value: "2.45 ETH", 
+      value: "2,450 M+", 
       icon: DollarSign, 
-      change: "$4,823 USD",
+      change: "≈ 2,450 XRP ($5,267)",
       color: "text-accent"
     },
     { 
@@ -44,7 +44,7 @@ const Dashboard = () => {
       title: "Professional Website Design",
       buyer: "Sarah Johnson",
       status: "In Progress",
-      amount: "0.05 ETH",
+      amount: "50 M+",
       deadline: "2 days",
     },
     {
@@ -52,7 +52,7 @@ const Dashboard = () => {
       title: "Logo Design Package",
       buyer: "Mike Chen",
       status: "Delivered",
-      amount: "0.02 ETH",
+      amount: "20 M+",
       deadline: "Completed",
     },
     {
@@ -60,7 +60,7 @@ const Dashboard = () => {
       title: "Video Editing Service",
       buyer: "Emma Wilson",
       status: "In Progress",
-      amount: "150 USDT",
+      amount: "150 M+",
       deadline: "4 days",
     },
   ];

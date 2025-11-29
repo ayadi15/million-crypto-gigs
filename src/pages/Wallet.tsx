@@ -4,51 +4,57 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowUpRight, ArrowDownLeft, Wallet as WalletIcon, TrendingUp, Bitcoin } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { ArrowUpRight, ArrowDownLeft, Wallet as WalletIcon, TrendingUp, RefreshCw } from "lucide-react";
+import millionPlusCoin from "@/assets/million-plus-coin.png";
 
 const Wallet = () => {
-  const balances = [
-    { crypto: "BTC", name: "Bitcoin", amount: "0.0234", usd: "$1,247.50", icon: "₿", change: "+5.2%" },
-    { crypto: "ETH", name: "Ethereum", amount: "2.456", usd: "$4,823.40", icon: "Ξ", change: "+3.8%" },
-    { crypto: "USDT", name: "Tether", amount: "8,450", usd: "$8,450.00", icon: "₮", change: "0.0%" },
-  ];
+  // Current XRP price (in real app, this would be fetched from API)
+  const xrpPriceUSD = 2.15;
+  const millionPlusBalance = 1250;
+  const xrpEquivalent = millionPlusBalance * 1; // 1 M+ = 1 XRP
+  const usdValue = (xrpEquivalent * xrpPriceUSD).toFixed(2);
 
   const transactions = [
     {
       id: "1",
       type: "received",
       description: "Payment from Sarah Johnson",
-      crypto: "0.05 ETH",
-      usd: "$98.20",
+      crypto: "50 M+",
+      usd: "$107.50",
       date: "2 hours ago",
       status: "completed",
+      xrplTx: "A1B2C3D4E5F6...",
     },
     {
       id: "2",
       type: "sent",
-      description: "Withdrawal to external wallet",
-      crypto: "0.5 ETH",
-      usd: "$982.00",
+      description: "Withdrawal to XRPL wallet",
+      crypto: "500 M+",
+      usd: "$1,075.00",
       date: "1 day ago",
       status: "completed",
+      xrplTx: "F6E5D4C3B2A1...",
     },
     {
       id: "3",
       type: "received",
       description: "Payment from Mike Chen",
-      crypto: "200 USDT",
-      usd: "$200.00",
+      crypto: "200 M+",
+      usd: "$430.00",
       date: "2 days ago",
       status: "completed",
+      xrplTx: "G7H8I9J0K1L2...",
     },
     {
       id: "4",
       type: "sent",
-      description: "Service fee payment",
-      crypto: "50 USDT",
-      usd: "$50.00",
+      description: "Platform service fee",
+      crypto: "25 M+",
+      usd: "$53.75",
       date: "3 days ago",
       status: "completed",
+      xrplTx: "M3N4O5P6Q7R8...",
     },
   ];
 
@@ -60,70 +66,94 @@ const Wallet = () => {
         <div className="container mx-auto px-4">
           {/* Header */}
           <div className="mb-8">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
               <div>
-                <h1 className="text-2xl md:text-3xl font-display font-bold mb-1">Crypto Wallet</h1>
-                <p className="text-muted-foreground">Manage your cryptocurrency balances</p>
+                <h1 className="text-2xl md:text-3xl font-display font-bold mb-1">Million+ Wallet</h1>
+                <p className="text-muted-foreground">Manage your M+ balance on XRPL</p>
               </div>
-              <Button className="bg-accent hover:bg-accent/90">
-                <WalletIcon className="mr-2 h-4 w-4" />
-                Connect External Wallet
-              </Button>
+              <div className="flex gap-2">
+                <Button variant="outline" className="flex-1 md:flex-none">
+                  <WalletIcon className="mr-2 h-4 w-4" />
+                  Connect XUMM
+                </Button>
+                <Button variant="outline" className="flex-1 md:flex-none">
+                  <WalletIcon className="mr-2 h-4 w-4" />
+                  Connect Crossmark
+                </Button>
+              </div>
             </div>
+            <Badge variant="secondary" className="bg-accent/10 text-accent">
+              <span className="mr-1">⚡</span> Built on XRPL - Fast & Secure
+            </Badge>
           </div>
 
           {/* Total Balance */}
-          <Card className="mb-8 gradient-hero text-primary-foreground">
-            <CardContent className="p-8">
-              <div className="flex items-center gap-2 mb-2">
-                <WalletIcon className="h-5 w-5" />
-                <p className="text-sm opacity-80">Total Balance</p>
+          <Card className="mb-8 gradient-hero text-primary-foreground overflow-hidden">
+            <CardContent className="p-8 relative">
+              <div className="flex items-center gap-3 mb-4">
+                <img src={millionPlusCoin} alt="M+ Coin" className="w-12 h-12" />
+                <div>
+                  <p className="text-sm opacity-80">Million+ Coin Balance</p>
+                  <p className="text-xs opacity-60">Built on XRP Ledger</p>
+                </div>
               </div>
-              <h2 className="text-4xl font-display font-bold mb-2">$14,520.90</h2>
+              <div className="flex items-baseline gap-3 mb-2">
+                <h2 className="text-5xl font-display font-bold">{millionPlusBalance.toLocaleString()}</h2>
+                <span className="text-2xl font-semibold text-accent">M+</span>
+              </div>
+              <div className="flex items-center gap-4 text-sm opacity-80 mb-4">
+                <span>≈ {xrpEquivalent.toLocaleString()} XRP</span>
+                <span>•</span>
+                <span>≈ ${usdValue} USD</span>
+              </div>
               <div className="flex items-center gap-2 text-sm opacity-80">
                 <TrendingUp className="h-4 w-4" />
                 <span>+8.2% this month</span>
               </div>
+              <div className="absolute top-4 right-4 opacity-10">
+                <img src={millionPlusCoin} alt="" className="w-32 h-32" />
+              </div>
             </CardContent>
           </Card>
 
-          {/* Crypto Balances */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {balances.map((balance) => (
-              <Card key={balance.crypto} className="hover:shadow-card transition-smooth">
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center text-accent text-2xl font-bold">
-                        {balance.icon}
-                      </div>
-                      <div>
-                        <p className="font-semibold">{balance.name}</p>
-                        <p className="text-xs text-muted-foreground">{balance.crypto}</p>
-                      </div>
-                    </div>
-                    <Badge variant={balance.change.startsWith('+') ? 'default' : 'secondary'} className="bg-accent/10 text-accent">
-                      {balance.change}
-                    </Badge>
+          {/* M+ to XRP Converter */}
+          <Card className="mb-8">
+            <CardHeader>
+              <CardTitle className="font-display flex items-center gap-2">
+                <RefreshCw className="h-5 w-5" />
+                M+ to XRP Converter
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="text-sm text-muted-foreground mb-2 block">Million+ Coin (M+)</label>
+                  <Input 
+                    type="number" 
+                    placeholder="Enter M+ amount" 
+                    className="text-lg"
+                    defaultValue="100"
+                  />
+                </div>
+                <div>
+                  <label className="text-sm text-muted-foreground mb-2 block">XRP Equivalent</label>
+                  <div className="h-12 bg-secondary rounded-md flex items-center px-4 text-lg font-semibold">
+                    100 XRP
                   </div>
-                  <div>
-                    <p className="text-2xl font-bold mb-1">{balance.amount}</p>
-                    <p className="text-sm text-muted-foreground">{balance.usd}</p>
-                  </div>
-                  <div className="flex gap-2 mt-4">
-                    <Button size="sm" variant="outline" className="flex-1">
-                      <ArrowDownLeft className="h-4 w-4 mr-1" />
-                      Deposit
-                    </Button>
-                    <Button size="sm" variant="outline" className="flex-1">
-                      <ArrowUpRight className="h-4 w-4 mr-1" />
-                      Withdraw
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                </div>
+              </div>
+              <div className="mt-4 p-4 bg-accent/10 rounded-lg">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-muted-foreground">Exchange Rate</span>
+                  <span className="font-semibold">1 M+ = 1 XRP</span>
+                </div>
+                <div className="flex items-center justify-between text-sm mt-2">
+                  <span className="text-muted-foreground">Current XRP Price</span>
+                  <span className="font-semibold">${xrpPriceUSD} USD</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* Quick Actions */}
           <div className="grid md:grid-cols-2 gap-6 mb-8">
@@ -133,8 +163,8 @@ const Wallet = () => {
                   <ArrowDownLeft className="h-8 w-8 text-accent" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display font-semibold text-lg mb-1">Deposit Crypto</h3>
-                  <p className="text-sm text-muted-foreground">Add funds to your wallet</p>
+                  <h3 className="font-display font-semibold text-lg mb-1">Deposit M+</h3>
+                  <p className="text-sm text-muted-foreground">Add M+ to your wallet via XRPL</p>
                 </div>
               </CardContent>
             </Card>
@@ -145,8 +175,8 @@ const Wallet = () => {
                   <ArrowUpRight className="h-8 w-8 text-accent" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display font-semibold text-lg mb-1">Withdraw Funds</h3>
-                  <p className="text-sm text-muted-foreground">Transfer to external wallet</p>
+                  <h3 className="font-display font-semibold text-lg mb-1">Withdraw to XRPL</h3>
+                  <p className="text-sm text-muted-foreground">Transfer M+ to external XRPL wallet</p>
                 </div>
               </CardContent>
             </Card>
@@ -169,9 +199,9 @@ const Wallet = () => {
             <CardContent>
               <div className="space-y-4">
                 {transactions.map((tx) => (
-                  <div key={tx.id} className="flex items-center justify-between p-4 border rounded-lg hover:shadow-soft transition-smooth">
+                  <div key={tx.id} className="flex flex-col md:flex-row md:items-center justify-between p-4 border rounded-lg hover:shadow-soft transition-smooth gap-3">
                     <div className="flex items-center gap-4 flex-1">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
                         tx.type === 'received' 
                           ? 'bg-green-500/10 text-green-600' 
                           : 'bg-red-500/10 text-red-600'
@@ -182,13 +212,18 @@ const Wallet = () => {
                           <ArrowUpRight className="h-5 w-5" />
                         )}
                       </div>
-                      <div className="flex-1">
+                      <div className="flex-1 min-w-0">
                         <p className="font-semibold mb-1">{tx.description}</p>
-                        <p className="text-xs text-muted-foreground">{tx.date}</p>
+                        <div className="flex flex-col gap-1">
+                          <p className="text-xs text-muted-foreground">{tx.date}</p>
+                          <p className="text-xs text-muted-foreground font-mono">
+                            XRPL TX: {tx.xrplTx}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <p className={`font-bold ${tx.type === 'received' ? 'text-green-600' : 'text-red-600'}`}>
+                    <div className="text-right md:text-right flex md:flex-col justify-between md:justify-start items-end gap-1">
+                      <p className={`font-bold text-lg ${tx.type === 'received' ? 'text-green-600' : 'text-red-600'}`}>
                         {tx.type === 'received' ? '+' : '-'}{tx.crypto}
                       </p>
                       <p className="text-sm text-muted-foreground">{tx.usd}</p>

@@ -10,7 +10,7 @@ const BecomeSellerPage = () => {
     {
       step: "1",
       title: "Create Your Account",
-      description: "Sign up for free and set up your Million+ profile. Connect your crypto wallet to receive instant payments.",
+      description: "Sign up for free and set up your Million+ profile. Connect your XRPL wallet (XUMM or Crossmark) to receive instant M+ payments.",
       time: "2 minutes"
     },
     {
@@ -28,7 +28,7 @@ const BecomeSellerPage = () => {
     {
       step: "4",
       title: "Start Getting Orders",
-      description: "Receive orders from clients worldwide and get paid instantly in cryptocurrency upon completion.",
+      description: "Receive orders from clients worldwide and get paid instantly in Million+ Coin upon completion.",
       time: "Start earning"
     }
   ];
@@ -36,8 +36,8 @@ const BecomeSellerPage = () => {
   const benefits = [
     {
       icon: DollarSign,
-      title: "Instant Crypto Payments",
-      description: "Receive payments immediately in BTC, ETH, or USDT. No more waiting for bank transfers or dealing with payment processors."
+      title: "Instant M+ Payments",
+      description: "Receive payments immediately in Million+ Coin (M+). No more waiting for bank transfers or dealing with payment processors."
     },
     {
       icon: Users,
@@ -80,7 +80,7 @@ const BecomeSellerPage = () => {
                 Become a Seller on Million+
               </h1>
               <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-                Join thousands of freelancers earning cryptocurrency by offering their skills to a global marketplace.
+                Join thousands of freelancers earning Million+ Coin by offering their skills to a global marketplace.
               </p>
               <div className="flex gap-4 justify-center flex-wrap">
                 <Link to="/signup">
@@ -136,7 +136,7 @@ const BecomeSellerPage = () => {
                 Why Sell on Million+?
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Join the future of freelancing with cryptocurrency
+                Join the future of freelancing with Million+ Coin on XRPL
               </p>
             </div>
             
@@ -198,7 +198,7 @@ const BecomeSellerPage = () => {
               Ready to Start Your Journey?
             </h2>
             <p className="text-lg text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              Join Million+ today and start earning cryptocurrency for your skills
+              Join Million+ today and start earning Million+ Coin for your skills
             </p>
             <Link to="/signup">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-orange-glow">

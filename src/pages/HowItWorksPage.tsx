@@ -23,10 +23,10 @@ const HowItWorksPage = () => {
     },
     {
       icon: Wallet,
-      title: "3. Work & Get Paid in Crypto",
-      description: "Freelancers deliver high-quality work. Payments are made instantly in cryptocurrency (BTC, ETH, USDT) with no delays or high fees.",
-      clientAction: "Pay instantly in crypto",
-      freelancerAction: "Receive instant crypto payments"
+      title: "3. Work & Get Paid in M+",
+      description: "Freelancers deliver high-quality work. Payments are made instantly in Million+ Coin with no delays or high fees.",
+      clientAction: "Pay instantly in M+",
+      freelancerAction: "Receive instant M+ payments"
     }
   ];
 
@@ -34,7 +34,7 @@ const HowItWorksPage = () => {
     {
       icon: Clock,
       title: "Instant Payments",
-      description: "No more waiting days for bank transfers. Get paid immediately in cryptocurrency."
+      description: "No more waiting days for bank transfers. Get paid immediately in Million+ Coin."
     },
     {
       icon: Shield,
@@ -60,7 +60,7 @@ const HowItWorksPage = () => {
               How Million+ Works
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto">
-              The simplest way to hire talent or offer your services—powered by cryptocurrency for instant, global payments.
+              The simplest way to hire talent or offer your services—powered by Million+ Coin for instant, global payments.
             </p>
           </div>
         </section>
@@ -115,7 +115,7 @@ const HowItWorksPage = () => {
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Why Choose Million+?</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Experience the future of freelancing with cryptocurrency-powered payments
+                Experience the future of freelancing with Million+ Coin payments on XRPL
               </p>
             </div>
             

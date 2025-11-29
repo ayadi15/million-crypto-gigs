@@ -40,6 +40,9 @@ const Navbar = () => {
             <Link to="/how-it-works" className="hover:text-accent transition-smooth">
               How It Works
             </Link>
+            <Link to="/about-million-coin" className="hover:text-accent transition-smooth">
+              About M+ Coin
+            </Link>
             <Link to="/become-seller" className="hover:text-accent transition-smooth">
               Become a Seller
             </Link>
@@ -100,6 +103,9 @@ const Navbar = () => {
                   </Link>
                   <Link to="/how-it-works" className="text-lg hover:text-accent transition-smooth">
                     How It Works
+                  </Link>
+                  <Link to="/about-million-coin" className="text-lg hover:text-accent transition-smooth">
+                    About M+ Coin
                   </Link>
                   <Link to="/become-seller" className="text-lg hover:text-accent transition-smooth">
                     Become a Seller
