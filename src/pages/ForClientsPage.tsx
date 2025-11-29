@@ -19,8 +19,8 @@ const ForClientsPage = () => {
     },
     {
       icon: Zap,
-      title: "Pay with Crypto",
-      description: "Fund your project in escrow using BTC, ETH, or USDT. Release payment when you're satisfied with the work."
+      title: "Pay with M+",
+      description: "Fund your project in escrow using Million+ Coin. Release payment when you're satisfied with the work."
     }
   ];
 
@@ -64,7 +64,7 @@ const ForClientsPage = () => {
                 Hire Expert Freelancers
               </h1>
               <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-                Find the perfect talent for your project and pay instantly with cryptocurrency. No delays, no hassles.
+                Find the perfect talent for your project and pay instantly with Million+ Coin. No delays, no hassles.
               </p>
               <div className="flex gap-4 justify-center flex-wrap">
                 <Link to="/signup">
@@ -118,7 +118,7 @@ const ForClientsPage = () => {
                 Why Clients Choose Million+
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Experience the future of hiring with cryptocurrency payments
+                Experience the future of hiring with Million+ Coin payments
               </p>
             </div>
             

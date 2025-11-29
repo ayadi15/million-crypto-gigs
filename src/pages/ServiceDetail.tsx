@@ -18,8 +18,8 @@ const ServiceDetail = () => {
       image: serviceDesignImg,
       title: "I will design a modern logo and brand identity",
       seller: { name: "Sarah Kim", avatar: avatar2, rating: 5.0, reviews: 432 },
-      price: "0.02",
-      crypto: "ETH",
+      price: "20",
+      crypto: "M+",
       deliveryTime: "2 days",
     },
   ];
@@ -27,23 +27,23 @@ const ServiceDetail = () => {
   const packages = [
     {
       name: "Basic",
-      price: "0.03",
-      crypto: "ETH",
+      price: "30",
+      crypto: "M+",
       delivery: "3 days",
       features: ["Responsive design", "3 pages", "Basic SEO", "Mobile optimized"],
     },
     {
       name: "Standard",
-      price: "0.05",
-      crypto: "ETH",
+      price: "50",
+      crypto: "M+",
       delivery: "5 days",
       features: ["Everything in Basic", "5 pages", "Advanced SEO", "CMS integration", "2 revisions"],
       popular: true,
     },
     {
       name: "Premium",
-      price: "0.08",
-      crypto: "ETH",
+      price: "80",
+      crypto: "M+",
       delivery: "7 days",
       features: ["Everything in Standard", "10 pages", "E-commerce ready", "Custom animations", "Unlimited revisions"],
     },
@@ -251,8 +251,11 @@ const ServiceDetail = () => {
                           ))}
                         </ul>
                         <Button className="w-full bg-accent hover:bg-accent/90 mb-2">
-                          Order Now
+                          Order Now (M+)
                         </Button>
+                        <p className="text-xs text-center text-muted-foreground">
+                          ⚡ Powered by XRPL - Fast & Secure
+                        </p>
                       </div>
                     ))}
                     

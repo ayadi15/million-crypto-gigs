@@ -10,7 +10,7 @@ const ForFreelancersPage = () => {
     {
       icon: DollarSign,
       title: "Get Paid Instantly",
-      description: "Receive your earnings immediately in BTC, ETH, or USDT. No more waiting days for bank transfers or dealing with payment delays."
+      description: "Receive your earnings immediately in Million+ Coin (M+). No more waiting days for bank transfers or dealing with payment delays."
     },
     {
       icon: Users,
@@ -76,7 +76,7 @@ const ForFreelancersPage = () => {
                 Freelance. Get Paid in Crypto.
               </h1>
               <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-                Join Million+ and offer your skills to a global marketplace. Receive instant cryptocurrency payments for your work.
+                Join Million+ and offer your skills to a global marketplace. Receive instant M+ payments for your work.
               </p>
               <div className="flex gap-4 justify-center flex-wrap">
                 <Link to="/signup">
@@ -183,7 +183,7 @@ const ForFreelancersPage = () => {
                 </Button>
               </Link>
               <p className="text-sm text-muted-foreground mt-4">
-                No credit card required • Connect your crypto wallet • Start earning immediately
+                No credit card required • Connect your XRPL wallet • Start earning in M+ immediately
               </p>
             </div>
           </div>

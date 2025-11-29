@@ -44,7 +44,7 @@ const Hero = () => {
               Million<span className="text-accent">+</span> — Freelancing Powered by Crypto
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              Hire experts or offer your skills. Get paid instantly in cryptocurrency.
+              Hire experts or offer your skills. Get paid instantly in Million+ Coin (M+).
             </p>
           </div>
 
