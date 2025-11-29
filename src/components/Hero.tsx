@@ -2,8 +2,23 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, TrendingUp, Code, Palette, Video, PenTool } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      navigate(`/browse?search=${encodeURIComponent(searchQuery)}`);
+    }
+  };
+
+  const handleTagClick = (tag: string) => {
+    navigate(`/browse?search=${encodeURIComponent(tag)}`);
+  };
+
   const trendingTags = [
     { icon: Palette, label: "Designer" },
     { icon: Code, label: "Developer" },
@@ -41,9 +56,16 @@ const Hero = () => {
                 <Input 
                   placeholder="Search for services, freelancers, or jobs..."
                   className="pl-12 h-14 bg-background text-foreground border-0 shadow-elevated"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                 />
               </div>
-              <Button size="lg" className="h-14 px-8 bg-accent hover:bg-accent/90 text-accent-foreground shadow-orange-glow">
+              <Button 
+                size="lg" 
+                className="h-14 px-8 bg-accent hover:bg-accent/90 text-accent-foreground shadow-orange-glow"
+                onClick={handleSearch}
+              >
                 Search
               </Button>
             </div>
@@ -58,6 +80,7 @@ const Hero = () => {
                 variant="outline"
                 size="sm"
                 className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-smooth"
+                onClick={() => handleTagClick(tag.label)}
               >
                 <tag.icon className="h-4 w-4 mr-2" />
                 {tag.label}
